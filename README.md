@@ -12,6 +12,15 @@ python3 -m http.server 8080
 
 Open <http://localhost:8080/>.
 
+A container image can be built and served on port 8000:
+
+```bash
+docker build -t biomixer-visualizer .
+docker run --rm -p 8000:8000 biomixer-visualizer
+```
+
+The container serves both `/` and `/visualizer/`, matching the default OntoPortal deployment ingress path.
+
 ## Embed parameters
 
 The visualizer accepts these BioMixer-compatible parameters:
